@@ -1,3 +1,198 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html,body {
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  height: 20px;
+  width: 100%;
+  color: white;
+  background-color: #38AEF0;
+  text-align: center;
+  font-size: 15px;
+}
+
+.contents {
+  height: 100%;
+  width: 100%;
+}
+
+// --- left-top-block_discription ---
+
+.left-top-block {
+  height: 70px;
+  width: 260px;
+  background-color: #253141;
+  padding: 35px 20px 0px;
+  color: #FFFFFF;
+  float: left;
+}
+
+.li {
+  color: #FFFFFF;
+  float: right;
+}
+
+i.fa.fa-pencil-square-o.icon {
+  padding-right: 10px;
+}
+
+// --- side-bar_discription ---
+
+.side-bar {
+    height: calc(100% - 115px);
+    width: 300px;
+    background-color: #2f3e51;
+    color: #FFFFFF;
+    float: left;
+    margin: 105px 0 0 0;
+    position: absolute;
+    &__text1 {
+        padding: 20px 20px 0;
+        font-size: 15px;
+    }
+    &__text2 {
+        padding: 5px 20px 0;
+        font-size: 11px;
+    }
+    &__text3 {
+        padding: 40px 20px 0;
+        font-size: 15px;
+    }
+    &__text4 {
+        padding: 5px 20px 0;
+        font-size: 11px;
+    }
+    &__text5 {
+        padding: 40px 20px 0;
+        font-size: 15px;
+    }
+    &__text6 {
+      padding: 5px 20px 0;
+      font-size: 11px;
+    }
+}
+
+// --- top_discription ---
+
+.chat-top-view {
+  height: 105px;
+  width: calc(100% - 300px);
+  background-color: #FFFFFF;
+  border: #eeeeee;
+  float: right;
+    &__text {
+      font-size: 15px;
+      color: #333333;
+      display: inline;
+      margin-left: calc(100% - 100px)
+    }
+
+    &__text1 {
+      font-size: 20px;
+      color: #333333;
+      padding-left: 40px;
+    }
+
+
+    &__text2 {
+      font-size: 12px;
+      color: #999999;
+      border-bottom: #eeeeee;
+      padding-left: 40px;
+      width: 50%;
+    }
+}
+
+button.edit {
+  font-size: 12px;
+  background-color: #FFFFFF;
+  color: #38AEF0;
+  display: inline;
+  margin-top: 13px;
+  height: 40px;
+}
+
+// --- center_discription ---
+
+.chat-center-view {
+    height: calc(100% - 115px);
+    width: calc(100% - 300px);
+    background-color: #EEEEEE;
+    float: right;
+    position: relative;
+    &__space1 {
+        padding-top: 46px
+    }
+    &__text1 {
+        font-size: 16px;
+        color: #434A54;
+        display: inline;
+        padding-left: 40px;
+        font-weight: bold;
+    }
+    &__text2 {
+        padding-left: 10px;
+        font-size: 12px;
+        color: #999999;
+        display: inline;
+    }
+    &__text3 {
+        padding-top: 10px;
+        font-size: 14px;
+        padding-left: 40px;
+        color: #434A54;
+    }
+    &__space2 {
+        padding-top: 40px
+    }
+    &__text4 {
+        font-size: 16px;
+        color: #434A54;
+        display: inline;
+        padding-left: 40px;
+        font-weight: bold;
+    }
+    &__text5 {
+        padding-left: 10px;
+        font-size: 12px;
+        color: #999999;
+        display: inline;
+    }
+    &__text6 {
+        padding-top: 10px;
+        font-size: 14px;
+        padding-left: 40px;
+        color: #434A54;
+    }
+}
+
+// --- bottom_discription ---
+
+.chat-bottom-view {
+  height: 70px;
+  width: 100%;
+  background-color: #CCCCCC;
+  position: absolute;
+  bottom: 0;
+}
+
+::-webkit-input-placeholder {
+  color: #ccc;
+  text-indent: 10px;
+  font-size: 16px;
+}
+
+input {
+  margin: 20px 0 20px 40px;
+  width: calc(100% - 150px);
+}
+
+button {
+  background-color: #38AEF0;
+  color: #FFFFFF;
+  height: 30px;
+  width: 60px;
+  margin: 20px 40px 20px 15px;
+  position: absolute;
+}
