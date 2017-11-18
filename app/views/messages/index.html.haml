@@ -1,12 +1,9 @@
-.wrapper
-  チャットグループが作成されました
-
 .contents
   .left-top-block
     %td{align: "left", valign: "bottom"}rrrrrrrrrrrrrrrrr
     .li
       %a{}
-        %i.fa.fa-cog.icon
+        = link_to fa_icon("cog"), "/users/#{@current_user.id}/edit", class: "header__link"
     .li
       %a{}
         %i.fa.fa-pencil-square-o.icon
@@ -21,7 +18,9 @@
 
   .chat-top-view
     .chat-top-view__text
-    %button.edit{type: "submit"} Edit
+    / %button.edit{type: "submit"} Edit
+    %button.edit{:onclick => "location.href='/users/#{@current_user.id}/edit'"} Edit
+
     .chat-top-view__text1 sampleメッセージ
     .chat-top-view__text2 konnnitiwawawak
 
