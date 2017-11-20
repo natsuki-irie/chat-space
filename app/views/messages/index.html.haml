@@ -3,7 +3,9 @@
     %td{align: "left", valign: "bottom"}rrrrrrrrrrrrrrrrr
     .li
       %a{}
-        = link_to fa_icon("cog"), "/users/#{@current_user.id}/edit", class: "header__link"
+        =link_to edit_user_path(current_user), class: "cog-link" do
+          =fa_icon "cog"
+
     .li
       %a{}
         %i.fa.fa-pencil-square-o.icon
@@ -18,8 +20,7 @@
 
   .chat-top-view
     .chat-top-view__text
-    / %button.edit{type: "submit"} Edit
-    %button.edit{:onclick => "location.href='/users/#{@current_user.id}/edit'"} Edit
+    %button.edit{type: "submit"} Edit
 
     .chat-top-view__text1 sampleメッセージ
     .chat-top-view__text2 konnnitiwawawak
