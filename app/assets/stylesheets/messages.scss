@@ -3,14 +3,14 @@ html,body {
   width: 100%;
 }
 
-.wrapper {
-  height: 20px;
-  width: 100%;
-  color: white;
-  background-color: #38AEF0;
-  text-align: center;
-  font-size: 15px;
-}
+// .wrapper {
+//   height: 20px;
+//   width: 100%;
+//   color: white;
+//   background-color: #38AEF0;
+//   text-align: center;
+//   font-size: 15px;
+// }
 
 .contents {
   height: 100%;
@@ -35,6 +35,10 @@ html,body {
 
 i.fa.fa-pencil-square-o.icon {
   padding-right: 10px;
+}
+
+.cog-link {
+  color: #FFFFFF;
 }
 
 // --- side-bar_discription ---
