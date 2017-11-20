@@ -9,6 +9,8 @@
 
     .li
       %a{}
+        =link_to new_group_path(current_user), class: "pencil-link" do
+          =fa_icon "pencil-square-o"
         %i.fa.fa-pencil-square-o.icon
 
   .side-bar
@@ -21,6 +23,7 @@
 
   .chat-top-view
     .chat-top-view__text
+    =link_to edit_group(current_user), class: "edit" do
     %button.edit{type: "submit"} Edit
 
     .chat-top-view__text1 sampleメッセージ
