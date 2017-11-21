@@ -9,9 +9,9 @@
 
     .li
       %a{}
-        =link_to new_group_path(current_user), class: "pencil-link" do
+        =link_to new_group_path, class: "pencil-link" do
           =fa_icon "pencil-square-o"
-        %i.fa.fa-pencil-square-o.icon
+        / %i.fa.fa-pencil-square-o.icon
 
   .side-bar
     .side-bar__text1 神
@@ -23,8 +23,8 @@
 
   .chat-top-view
     .chat-top-view__text
-    =link_to edit_group(current_user), class: "edit" do
-    %button.edit{type: "submit"} Edit
+    / =link_to edit_group(current_user), class: "edit" do
+    / %button.edit{type: "submit"} Edit
 
     .chat-top-view__text1 sampleメッセージ
     .chat-top-view__text2 konnnitiwawawak
@@ -40,5 +40,5 @@
     .chat-center-view__text6 レビューお願いします
 
     .chat-bottom-view
-      %input{placeholder: "type a message", type: "text"}/
-      %button{name: "action", type: "submit", value: "send"} Send
+      %input{placeholder: "type a message", type: "text", class: "bottom_text"}/
+      %button{name: "action", type: "submit", value: "send"} Send, 
