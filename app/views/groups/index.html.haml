@@ -1,0 +1,50 @@
+.contents
+  .left-top-block
+    %td{align: "left", valign: "bottom"}rrrrrrrrrrrrrrrrr
+    .li
+      %a{}
+        =link_to edit_user_path(current_user), class: "cog-link" do
+          =fa_icon "cog"
+
+
+    .li
+      %a{}
+        =link_to new_group_path, class: "pencil-link" do
+          =fa_icon "pencil-square-o"
+        / %i.fa.fa-pencil-square-o.icon
+
+  .side-bar
+    .side-bar__text1
+      - current_user.groups.each do |group|
+        .side-bar__names
+          = group.name
+        .side-bar__messages
+          まだメッセージはありません
+
+    / .side-bar__text2 sssssssssss
+    / .side-bar__text3 aaaaaaaaaaa
+    / .side-bar__text4 まだメッセージはありません
+    / .side-bar__text5 sampleグループ
+    / .side-bar__text6 まだメッセージはありません
+
+  .chat-top-view
+    / .chat-top-view__text
+    / =link_to edit_group(current_user), class: "edit" do
+    / %button.edit{type: "submit"} Edit
+
+    / .chat-top-view__text1 sampleメッセージ
+    / .chat-top-view__text2 konnnitiwawawak
+
+  .chat-center-view
+    .chat-center-view__space1
+    / .chat-center-view__text1 ryousukemaehira
+    / .chat-center-view__text2 2017/11/10 16:26:07
+    / .chat-center-view__text3 なるほど
+    / .chat-center-view__space2
+    / .chat-center-view__text4 irie natsuki
+    / .chat-center-view__text5 2018/08/21 18:45:33
+    / .chat-center-view__text6 レビューお願いします
+
+    .chat-bottom-view
+      %input{placeholder: "type a message", type: "text", class: "bottom_text"}/
+      %button{name: "action", type: "submit", value: "send"} Send
