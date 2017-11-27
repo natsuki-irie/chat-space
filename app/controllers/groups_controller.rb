@@ -1,6 +1,9 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: [:index, :edit, :update]
 
   def index
+    @message = Message.new
+    @messages = @group.messages.includes(:user)
   end
 
   def new
@@ -33,7 +36,18 @@ class GroupsController < ApplicationController
   def show
   end
 
+  def chat
+    @message = Message.all
+  end
+
   private
+
+  def set_group
+    @group = Group.find_by(params[:id])
+    # @group = Group.find(params[:id])
+    @groups = current_user.groups
+  end
+
 
   def group_params
       params.require(:group).permit(:name, { user_ids: [] })
