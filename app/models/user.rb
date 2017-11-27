@@ -9,6 +9,9 @@ class User < ApplicationRecord
   validates :email, presence: true
   has_many :group_users, foreign_key: 'user_id'
   has_many :groups, through: :group_users
+  has_many :messages
+
+  # mount_uploader :image, ImageUploader
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
