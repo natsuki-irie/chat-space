@@ -26,12 +26,11 @@ let(:message) { create(:message) }
         get :index, params: {group_id: group.id}
       end
 
-      it "意図したビューにリダイレクトできているか" do
+      it "新規登録画面にリダイレクトできているか" do
         expect(response).to redirect_to(new_user_session_path)
       end
     end
   end
-
 
   describe 'POST #create' do
 
@@ -47,7 +46,7 @@ let(:message) { create(:message) }
         }.to change(Message, :count).by(1)
 
       end
-      it "意図した画面に遷移しているか" do
+      it "メッセージ保存後の画面に遷移しているか" do
         expect(
           post :create, params: {group_id: group, message: attributes_for(:message)}
           ).to redirect_to(group_messages_path)
@@ -66,7 +65,7 @@ let(:message) { create(:message) }
           post :create, params: {group_id: group, message: attributes_for(:message)}
         }.to change(Message, :count).by(0)
       end
-      it "意図したビューが描画されているか" do
+      it "メッセージ保存失敗後の画面に遷移されているか" do
         expect(
           post :create, params: {group_id: group, message: attributes_for(:message)}
           ).to redirect_to(group_messages_path)
@@ -74,7 +73,7 @@ let(:message) { create(:message) }
     end
 
     context 'ログインしていない場合' do
-      it "意図した画面にリダイレクトできているか" do
+      it "新規登録画面にリダイレクトできているか" do
         post :create, params: { group_id: group, message: attributes_for(:message) }
         expect(response).to redirect_to new_user_session_path
       end
