@@ -21,12 +21,10 @@ $(document).ready(function() {
 
   $('#new_message').on('submit', function(e){
 
-    //デフォルトのブラウザ挙動を抑制
     e.preventDefault();
 
     var formData = new FormData($(this).get(0));
     var url = $(this).attr('action')
-    // console.log(formData);
     $.ajax({
       url: url,
       type: "POST",
