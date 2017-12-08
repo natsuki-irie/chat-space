@@ -134,19 +134,13 @@ button.edit {
 // --- center_discription ---
 
 .chat-center-view {
-    height: calc(100% - 105px);
+    height: 100%;
+    height: calc(95% - 130px);
     width: calc(100% - 300px);
     background-color: #EEEEEE;
     float: right;
     position: relative;
-    max-height: 721px;
     overflow: scroll;
-}
-
-.chat-messages {
-  overflow: scroll;
-  max-height: 721px;
-  // overflow: scroll;
 }
 
 .chat-upper {

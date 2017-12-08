@@ -15,7 +15,11 @@ class MessagesController < ApplicationController
     @message = Message.new
     @message = Message.new(message_params)
     if @message.save
-      redirect_to controller: :messages, action: :index
+      respond_to do |format|
+      format.html { redirect_to controller: :messages, action: :index  }
+      format.json
+      end
+
     else
       redirect_to group_messages_path, alert: 'メッセージの保存に失敗しました'
     end

@@ -1,44 +1,44 @@
 = render 'layouts/side-bar'
 
-.chat-contents
-  .chat-top-view
-    .chat-top-view__name
-      = @group.name
-    .chat-top-view__members
-      Member :
-      - @group.users.each do |user|
-        = user.name
 
-    .chat-top-view__edit
-      =link_to edit_group_path(current_user), class: "edit" do
-        %button.edit{type: "submit"} Edit
+.chat-top-view
+  .chat-top-view__name
+    = @group.name
+  .chat-top-view__members
+    Member :
+    - @group.users.each do |user|
+      = user.name
+
+  .chat-top-view__edit
+    =link_to edit_group_path(current_user), class: "edit" do
+      %button.edit{type: "submit"} Edit
 
 
-  .chat-center-view
-    .chat-messeges
-      - @messages.each do |message|
-        .chat-upper
-          .chat-upper__name
-            = message.user.name
-          .chat-upper__date
-            = message.created_at
-        .chat-lower-message
-          %p.chat-lower-content
-            = message.text
-          %p.chat-lower-content-image
-            = image_tag message.image
+.chat-center-view
+  .chat-messeges
+    - @messages.each do |message|
+      .chat-upper
+        .chat-upper__name
+          = message.user.name
+        .chat-upper__date
+          = message.created_at.strftime("%Y-%m-%d %H:%M:%S")
+      .chat-lower-message
+        %p.chat-lower-content
+          = message.text
+        %p.chat-lower-content-image
+          = image_tag message.image
 
-    .chat-bottom
-      = form_for [@group, @message] do |f|
-        .chat-bottom-view
-          = f.text_field :text, placeholder: "type a message", class: "message-form__field"
-          .chat-bottom__image
-            .form-mask
-              %label
-                = f.file_field :image, class:"message-form__image--file"
-                %i.fa.fa-picture-o.icon
-          .chat-bottom__action
-            = f.submit "Send", class: "message-form__action-btn"
+  .chat-bottom
+    = form_for [@group, @message], html: {id: "new_message"} do |f|
+      .chat-bottom-view
+        = f.text_field :text, placeholder: "type a message", class: "message-form__field"
+        .chat-bottom__image
+          .form-mask
+            %label
+              = f.file_field :image, class:"message-form__image--file"
+              %i.fa.fa-picture-o.icon
+        .chat-bottom__action
+          = f.submit "Send", class: "message-form__action-btn", id: "jsbutton"
 
 
 
