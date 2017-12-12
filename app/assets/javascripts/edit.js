@@ -40,11 +40,9 @@ $(document).on('turbolinks:load', function(){
           })
         }
     });
-           $(".chat-group-form").on("click", ".user-search-add", function() {
+        $(".chat-group-form").on("click", ".user-search-add", function() {
           var user_id   = $(this).data("user-id");
-          console.log(user_id);
           var user_name = $(this).data("user-name");
-          console.log(user_name);
           addSelectedUser(user_id, user_name);
           $(this).parent().remove();
         });
@@ -52,6 +50,5 @@ $(document).on('turbolinks:load', function(){
         $(document).on("click", ".user-search-remove", function() {
           $(this).parent().remove();
         });
-
   });
 });
