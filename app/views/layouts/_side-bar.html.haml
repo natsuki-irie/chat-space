@@ -10,14 +10,15 @@
       = link_to new_group_path, class: "pencil-link" do
         =fa_icon "pencil-square-o"
 .side-bar
-  .side-bar__text1
+  .side-bar__text
     - @groups.each do |group|
-      %a{}
-        = link_to group_messages_path(group.id), class: "link_color" do
-          .side-bar__names
-            = group.name
-          .side-bar__messages
-            - if group.messages.blank?
-              まだメッセージはありません
-            - else
-              = group.messages.last.text
+      .side-bar__groups
+        %a{}
+          = link_to group_messages_path(group.id), class: "link_color" do
+            .side-bar__names
+              = group.name
+            .side-bar__messages
+              - if group.messages.blank?
+                まだメッセージはありません
+              - else
+                = group.messages.last.text
