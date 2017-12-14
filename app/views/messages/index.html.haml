@@ -15,8 +15,8 @@
 
 
 .chat-center-view
-  .chat-messeges
-    - @messages.each do |message|
+  - @messages.each do |message|
+    .chat-messeges{data: {id: message.id}}
       .chat-upper
         .chat-upper__name
           = message.user.name
@@ -28,17 +28,17 @@
         %p.chat-lower-content-image
           = image_tag message.image
 
-  .chat-bottom
-    = form_for [@group, @message], html: {id: "new_message"} do |f|
-      .chat-bottom-view
-        = f.text_field :text, placeholder: "type a message", class: "message-form__field"
-        .chat-bottom__image
-          .form-mask
-            %label
-              = f.file_field :image, class:"message-form__image--file"
-              %i.fa.fa-picture-o.icon
-        .chat-bottom__action
-          = f.submit "Send", class: "message-form__action-btn", id: "jsbutton"
+
+= form_for [@group, @message], html: {id: "new_message"} do |f|
+  .chat-bottom-view
+    = f.text_field :text, placeholder: "type a message", class: "message-form__field"
+    .chat-bottom__image
+      .form-mask
+        %label
+          = f.file_field :image, class:"message-form__image--file"
+          %i.fa.fa-picture-o.icon
+    .chat-bottom__action
+      = f.submit "Send", class: "message-form__action-btn", id: "jsbutton"
 
 
 

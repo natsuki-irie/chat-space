@@ -64,8 +64,12 @@ html,body {
         color: #FFFFFF;
         text-decoration: none;
     }
-    &__text1 {
+    &__text {
+        // padding: 20px 20px 0;
         // background-color: #FFFFFF;
+    }
+    &__groups {
+        padding: 20px 0 40px;
     }
 }
 
@@ -170,12 +174,13 @@ button.edit {
 
 .chat-bottom-view {
   height: 70px;
-  width: 80%;
+  width: calc(100% - 300px);
   background-color: #CCCCCC;
   position: absolute;
   bottom: 0;
   font-size: 0;
-  position: fixed;
+  // position: fixed;
+  margin: 0px 0px 0px 300px;
 }
 
 .message-form__field {
