@@ -21,7 +21,7 @@ $(document).on('turbolinks:load', function(){
                         </div>
                       </div>`
   )}
-    setInterval(update, 6000);
+    setInterval(update, 5000);
     var interval = setInterval;
     function update(){
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
@@ -44,6 +44,9 @@ $(document).on('turbolinks:load', function(){
         console.log(data);
         $.each(data, function(i, data){
           buildMESSAGE(data);
+        });
+        $(function() {
+          $('.chat-center-view').animate({scrollTop: $('.chat-center-view')[0].scrollHeight}, 'fast');
         });
       })
 
